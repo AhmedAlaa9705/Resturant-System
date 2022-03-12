@@ -1,0 +1,1466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{413D132D-2F45-4812-B76B-4A6687572392}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApi</RootNamespace>
+    <AssemblyName>WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44381</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.7\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="AuthenticationFilters\BasicAuthenticationFilter.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\AdressController.cs" />
+    <Compile Include="Controllers\AreasController.cs" />
+    <Compile Include="Controllers\BillsController.cs" />
+    <Compile Include="Controllers\BoxController.cs" />
+    <Compile Include="Controllers\CompanyBranchController.cs" />
+    <Compile Include="Controllers\CompanyStoreController.cs" />
+    <Compile Include="Controllers\CostCenterController.cs" />
+    <Compile Include="Controllers\CurrenciesController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\EmployeeTypesController.cs" />
+    <Compile Include="Controllers\EntryController.cs" />
+    <Compile Include="Controllers\EntrySettingsController.cs" />
+    <Compile Include="Controllers\ExpensesController.cs" />
+    <Compile Include="Controllers\FollowProductionsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemCompanyController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\LogFileController.cs" />
+    <Compile Include="Controllers\SignInController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ServiceGroupController.cs" />
+    <Compile Include="Controllers\TokenController.cs" />
+    <Compile Include="Controllers\UnitsController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\ACCOUNT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ACCOUNTS_TYPES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AccountView.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AccountView2.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ACCOUNT_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ACCOUNT_DISCOUNT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ACCOUNT_DISCOUNT_ITEM.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ALLOWANCES_SANCTIONS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AREA.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AUTHORS_COPYRIGHT_ADDITIONAL.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AUTHORS_COPYRIGHT_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AUTHORS_COPYRIGHT_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BARCODE_READER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILLS_ON_DEMAND.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_CASH_SALESBILL.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_DETAILS_DELETED.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_DETAILS_DELETED_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_DETAILS_TEMP.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_DETAILS_TEMP_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_DETAILS_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_DETAILS_VIEW_SUM_QTY.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_EFFECTS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_GRID_COLUMNS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER_DELETED.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER_DELETED_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER_DETAILS_DAILY.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER_TEMP.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER_TEMP_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_MASTER_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_SETTINGS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BILL_TYPES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CHARGE_COMPANY.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CHARGE_POLICY.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CHARGE_POLICY_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CHECK_TYPE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\COMPANY_BRANCHES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\COMPANY_BRANCHES_UID.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\COMPANY_STORES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\COST_CENTERS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CURRENCy.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CUSTOMER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CustomerBranch.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CUSTOMERS_MOTION_TO_BILLS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CUSTOMER_BRANCHES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CUSTOMER_SON.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DATABASE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DATABASECONFIG.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DAY.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DEFAULT_SHORTCUTS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DEPARTMENT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DesignTable.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DISC_ACCOUNTS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Email.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EmployeesROUTA.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEES_DETAILS_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEES_EXTRA_DISCOUNT_PAYMENT_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEES_EXTRA_DISCOUNT_PAYMENT_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEES_IN_OUT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEES_NEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEES_NEW_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMPLOYEES_TYPES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EMP_CERTIFICATE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\entry.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EntryCollectionView.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_ADVANCE_PAYMENT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_BILLS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_CHECK_PAYMENT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_GRID_COLUMNS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_SETTINGS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ENTRY_TYPES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GetLogForFormInPeriod_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GetLogForUIDInPeriod_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ACCOUNT_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ALL_EMPLOYEE_NEW_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ALL_EMPLOYEE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ALL_ENTRY_MASTER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ALL_ENTRY_SETTING_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ALL_ENTRY_TYPES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_BANK_ENTRIES_DAILY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_BILLS_INFORMATIONS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_BILL_GRID_SETTING_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_BILL_INFO.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_BILL_INFO_supp.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_BILL_SETTING_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_BILL_TYPES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_COMMISSINOS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_CUSTOMER_SUPPLIER_ENTRIES_CHECK_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_CUSTOMER_SUPPLIER_ENTRIES_DAILY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_DAILY_MONTHLY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_Data_Online_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_EMPLOYEE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_EMPLOYEE_TELEPHONES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ENTRY_DETAILS_CHECK_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ENTRY_DETAILS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ENTRY_MASTER_kest_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ENTRY_SETTING_BY_ABRV_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ENTRY_SETTING_BY_NAME_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ENTRY_SETTING_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_EXPINSIS_ENTRIES_DAILY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ITEM_BALANCE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ITEM_COST_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ITEM_CURRENT_QTY_FAST_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_ITEM_CURRENT_QTY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_MAIN_COMPANY_BRANCH_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_MAIN_COMPANY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_MAIN_COMPANY_STORE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_MAIN_COST_CENTER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_MAIN_GROUP_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_MARK_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_PLACES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_SELLS_TYPES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GET_UsrPrevilegs_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GOVERNORATE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GROUP_DIS_ACCOUNT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\INVOICE_MOTION_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEM.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_AVG.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_BALANCE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_COLLECT_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_COLLECT_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_COLLECT_WITH_PRICE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_COMPANIES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_COMPANY_ID.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_DEFAULT_UNIT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_GROUPS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_INVENTORY_QTY_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_MARK.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_MEASURING.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_PLACES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_PRICE_OLD.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_QTY_OLD.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_QTY_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_SERIALS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEMS_UNITS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEM_COST.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEM_DIS_ACCOUNT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEM_PRICES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ITEM_SHELIF_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\kest.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\kests_supp.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LOADBILL_NUMBERS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LOADBILL_NUMBERS_supp.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\load_kests_data.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\load_kests_data_sup.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\load_kests_data_supp.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NATION.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\OLD_PRICE_WITH_DATE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ORDER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PERSONNEL_LATES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PERSONNEL_OFFICIAL_VACATIONS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PERSONNEL_OPTIONS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\POLICY_PRICES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PRINT_BARCODEBILLS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PROG_TYPE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ACCOUNT_MOTION_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_BILLS_CUSTOMERS_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_BILL_DAILY_REPORT_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_BILL_ITEM_PRICES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_CUSTOMER_SALES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_EMPLOYEES_DAILY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_EMPLOYEES_IN_OUT_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_EMP_ALL_SALARY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_EMP_SALARY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ENTRY_COLLECTION_CHEKS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ENTRY_TRANS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_IncomeData_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_INVOICES_REVENEU_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ITEMS_INVENTORY_Stores_BY_AUTHORS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ITEMS_INVENTORY_Stores_BY_COMPANY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ITEMS_PRICES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ITEM_BALANCE_UNIT_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ITEM_BALANCE_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ITEM_MOTION_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_ITEM_PRICES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_RESERVATION.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_REVISION_AVERAGE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ACCOUNTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ALLOWANCES_SANCTIONS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_AREA_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_BILLS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_BILL_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_CHARGE_COMPANY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_COMPANY_BRANCH_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_COMPANY_STORE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_COST_CENTER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_EMPLOYEE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ENTRY_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEM1_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEMS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEMS_PLACES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEM_BYBARCODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEM_CLASS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEM_COMPANY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEM_GROUP_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_ITEM_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_SERVICE_GROUP_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_TEMS_MARK_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SEARCH_UNIT_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ACCOUNT_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ACCOUNT_BY_NAME_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ACCOUNTS_DETAILS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ACCOUNTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ACCOUNT_CUSTOMER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ACCOUNT_SUPPLIER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_AREAS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ASSETS_BADS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_BADS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_BILLS_TYPES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_BILL_DETAILS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_BILL_GRID_COLUMNS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_BILL_MASTER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_BILL_SETTINGS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_BOX_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_CHARGE_COMPANY_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_COLLECTIVE_ACCOUNTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_COMPANY_BRANCHES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_COMPANY_STORES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_COST_CENTERS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_CURRENCIES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_Customer_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_DATABASE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_DATA_BASES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_DEPARTMENTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_DISC_ACCOUNTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_DISTRIBUTIVE_ACCOUNTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_EMPLOYEES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_EMP_TYPES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_EXPINSIS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_FINAL_ACCOUNTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_GOVERNORATES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ITEMS_COMPANIES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ITEMS_GROUPS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ITEMS_MARK_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ITEMS_PLACES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ITEMS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_ITEMS_UNITS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_NATIONS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_NORMAL_ACCOUNTS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_SERVICES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_SERVICE_GROUPS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_TELEPHONE_CAT_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_Themes_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_TOWNS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_UNITS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ALL_VILLAGES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_BILL_DETAILS_BY_NUMBER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_BILL_GRID_COLUMNS_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_BILL_MASTER_BY_NUMBER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_BILL_MASTER_DETAILS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_BILL_SETTINGS_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_COMPANY_BRANCHES_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_COMPANY_BY_GROUPID_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_COMPANY_STORES_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_COST_CENTERS_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_CURRENCY_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_DEPARTMENT_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_DISC_ACCOUNTS_BY_NUMBER_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_EMPLOYEES_BY_COM_BRN_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_EMPLOYEES_BY_DEPT_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_EMPLOYEES_BY_NAME_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_EMPLOYEES_BY_TYPE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_EMP_TYPES_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_EMP_TYPES_BY_ID_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_GOVERNORATE_BY_NAME_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ITEMS_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ITEMS_BY_GROUPID_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ITEMS_COMPANIES_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_ITEMS_GROUPS_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_NATION_BY_NAME_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_TELEPHONES_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_TOWN_BY_NAME_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELECT_UNITS_BY_CODE_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SELLS_TYPES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERIAL_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_BILL_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_BILL_DETAILS_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_BILL_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_DETAILS_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_GROUP.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVICE_MASTER_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SET_BILLS_MENU_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SET_BILL_MENU_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SHORTCUT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SHORTCUT_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SHORT_CUT_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Smart.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Smart.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Smart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Smart.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Smart.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SmartSysDataBas.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SOLD_ITEMS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SOLD_ITEMS_RETURN.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SOLD_Services.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SPSELECTALLITEMSBYALLUNITS_Result.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\STORE_ITEMS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SUPPLIER_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SYSTEM_OPTIONS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SYSTEM_OPTION_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TBAD.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TBOX.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TBOXACCOUNT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TBUDGETACCOUNT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TCAR.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TCAR_STATUS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TCAR_TYPE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TCLASS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TCOLOUR.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TELEPHONE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TELEPHONES_TYPES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TELEPHONE_CAT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Test_Update.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TEXPINSI.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TFOLLLOW_PRODUCTION_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TFOLLOW_PRODUCTION.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Theme.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TMARKA_MASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TokenUser.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TOWN.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TPAY_TYPES.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TRECENTADDEDBILL.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TRECENTMINQTY.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TreeView.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TSTORE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UID.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UNIT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UnitsView.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UserLogFile.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\User_User.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UsrPrevileg.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VCUSTOMERSSUPPLIERSHOMETELEPHONE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VCUSTOMERSSUPPLIERSMOBILETELEPHONE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VCUSTOMER_SON_CUSTOMERS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VENTRYMASTER.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VENTRY_DETAILS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VGETALLCUSTOMERSUPPLIERDATA.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VIEW_BILL_MASTER_VIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VILLAGE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VITEMSSERVICE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VITEMSSHELIVESPREVIEW.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VSELECTALLITEMSBYALLUNIT.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VSERVICEITEMQTY.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VSTORE.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\V_NOTIFICATIONS.cs">
+      <DependentUpon>Smart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AccountType.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\UIDViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Security\UserSecurity.cs" />
+    <Compile Include="Singletons\Singleton.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DAL\Smart.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Smart.edmx</DependentUpon>
+      <LastGenOutput>Smart.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\Smart.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Smart.edmx</DependentUpon>
+      <LastGenOutput>Smart.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="DAL\Smart.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Smart.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\Smart.edmx.diagram">
+      <DependentUpon>Smart.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58122</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44381/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
